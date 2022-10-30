@@ -11,7 +11,13 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //1. Создайте коллекцию типа [Any], включающую несколько вещественных чисел, целых, строк и булевых значений. Распечатайте содержимое коллекции.
+        
+        let collection: [Any] = [42.7, false, 7, 612.1, "котенок", 91, true, 12.2, "мартышка"]
+
+        print(collection)
+        print("------------------------------------")
     }
 
 
