@@ -80,6 +80,25 @@ class ViewController: UIViewController {
         print("Total value = \(total)")
         print("------------------------------------")
         
+        // Обнулите переменную total и снова пройдите по всей коллекции, прибавляя к ней все целые и вещественные числа. Для каждой строки, встретившейся на пути, попробуйте сконвертировать её в число, и добавьте это значение к общему. Игнорируйте булевы значения. Распечатайте итог.
+        
+        total = 0
+
+        for (_, value) in arrayDict {
+            if let itemInt = value as? Int {
+                total += Double(itemInt)
+            } else if let itemDouble = value as? Double {
+                total += itemDouble
+            } else if let itemString = value as? String {
+                total += Double(itemString) ?? 0
+            } else {
+                total += 0
+            }
+        }
+
+        print("Total value = \(total)")
+        print("------------------------------------")
+
     }
 }
 
