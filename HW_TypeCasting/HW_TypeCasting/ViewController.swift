@@ -35,6 +35,28 @@ class ViewController: UIViewController {
 
         print("------------------------------------")
         
+        
+        //3. Создайте словарь [String : Any], где все значения — это смесь вещественных и целых чисел, строк и булевых значений.  Выведите красиво на консоль пары ключ/значения для всех элементов коллекции.
+        
+        // первый способ
+        let keyys = ["first", "second", "third", "forth", "fifth", "sixth", "seventh", "eighth", "ninth"]
+        let dictionary = zip(keyys, collection)
+        let elements = Dictionary(dictionary, uniquingKeysWith: { return $1 } )
+
+        for (key, value) in elements {
+            print("\(key) - \(value);")
+        }
+
+        print("------------------------------------")
+
+        // второй способ
+        let arrayDict: [String: Any] = ["first": 123, "second": true, "third": "312", "forth": false, "fifth": 5, "sixth": 67.8, "seventh": 1, "eighth": "none", "ninth": 21.6]
+
+        for (key, value) in arrayDict {
+            print("\(key) - \(value);")
+        }
+        print("------------------------------------")
+        
     }
 }
 
