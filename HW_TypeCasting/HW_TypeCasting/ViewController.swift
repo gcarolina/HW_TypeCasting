@@ -19,7 +19,7 @@ class ViewController: UIViewController {
         print(collection)
         print("------------------------------------")
         
-        //2. Пройдите по всем элементам коллекции.  Для каждого целого, напечатайте "Целое число " и его значение.  Повторите то же самое для вещественных чисел, строк и булевых значений.
+        //2. Пройдите по всем элементам коллекции. Для каждого целого, напечатайте "Целое число " и его значение. Повторите то же самое для вещественных чисел, строк и булевых значений.
         
         for element in collection {
             if element is Double {
@@ -36,7 +36,7 @@ class ViewController: UIViewController {
         print("------------------------------------")
         
         
-        //3. Создайте словарь [String : Any], где все значения — это смесь вещественных и целых чисел, строк и булевых значений.  Выведите красиво на консоль пары ключ/значения для всех элементов коллекции.
+        //3. Создайте словарь [String : Any], где все значения — это смесь вещественных и целых чисел, строк и булевых значений. Выведите красиво на консоль пары ключ/значения для всех элементов коллекции.
         
         // первый способ
         let keyys = ["first", "second", "third", "forth", "fifth", "sixth", "seventh", "eighth", "ninth"]
@@ -55,6 +55,29 @@ class ViewController: UIViewController {
         for (key, value) in arrayDict {
             print("\(key) - \(value);")
         }
+        print("------------------------------------")
+        
+        //4. Создайте переменную total типа Double, равную 0. Переберите все значения словаря, и добавьте значение каждого целого и вещественного числа к значению вашей переменной. Для каждой строки добавьте 1. Для каждого булева значения, добавьте 2, в случае, если значение равно true, либо вычтите 3, если оно false. Напечатайте значение total.
+        
+        var total: Double = 0
+
+        for (_, value) in arrayDict {
+            if let itemInt = value as? Int {
+                total += Double(itemInt)
+            } else if let itemString = value as? String {
+                total += 1
+            } else if let itemDouble = value as? Double {
+                total += itemDouble
+            } else if let itemBool = value as? Bool {
+                if itemBool {
+                    total += 2
+                } else {
+                    total -= 3
+                }
+            }
+        }
+
+        print("Total value = \(total)")
         print("------------------------------------")
         
     }
